@@ -1,6 +1,7 @@
 import { uploadCloth } from "../../components/api/clothesApi";
 
 export default function UploadClothes({ refresh }) {
+
   const handleUpload = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -25,6 +26,20 @@ export default function UploadClothes({ refresh }) {
         <option>Bottoms</option>
         <option>Footwear</option>
         <option>Accessories</option>
+      </select>
+
+      {/* COLOR FIELD — AI ka future yahin likha jaata hai */}
+      <select
+        name="color"
+        className="bg-white text-slate-700 border border-green-400/60
+                   px-4 py-2 rounded-lg focus:outline-none focus:ring-2
+                   focus:ring-green-400"
+      >
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
       </select>
 
       <label className="relative cursor-pointer">

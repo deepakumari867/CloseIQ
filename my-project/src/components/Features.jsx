@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-/* ===================== FEATURES DATA ===================== */
+/*  FEATURES DATA  */
 
 const features = [
   {

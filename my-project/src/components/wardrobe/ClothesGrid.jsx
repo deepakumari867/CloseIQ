@@ -1,14 +1,11 @@
-import React from "react";
 import ClothesCard from "./ClothesCard";
 
-export default function ClothesGrid({ clothes, activeCategory, handleDelete }) {
+export default function ClothesGrid({ clothes = [], remove }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-      {clothes
-        .filter((item) => item.category === activeCategory)
-        .map((item) => (
-          <ClothesCard key={item.id} item={item} handleDelete={handleDelete} />
-        ))}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {clothes.map(item => (
+        <ClothesCard key={item._id} item={item} remove={remove} />
+      ))}
     </div>
   );
 }

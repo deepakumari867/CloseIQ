@@ -1,19 +1,16 @@
-import React from "react";
+export default function CategoryTabs({ selected, setSelected }) {
+  const tabs = ["All", "Tops", "Bottoms", "Footwear", "Accessories"];
 
-export default function CategoryTabs({ categories, activeCategory, setActiveCategory }) {
   return (
-    <div className="flex gap-4 mb-6">
-      {categories.map((cat) => (
+    <div className="flex gap-4 mb-6 flex-wrap">
+      {tabs.map(tab => (
         <button
-          key={cat}
-          onClick={() => setActiveCategory(cat)}
-          className={`px-4 py-2 rounded-full font-medium transition ${
-            activeCategory === cat
-              ? "bg-[#8fbfb2] text-white"
-              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-          }`}
+          key={tab}
+          onClick={() => setSelected(tab)}
+          className={`px-4 py-2 rounded-full text-sm transition
+          ${selected === tab ? "bg-[#1f4f47] text-white" : "bg-gray-200"}`}
         >
-          {cat}
+          {tab}
         </button>
       ))}
     </div>
